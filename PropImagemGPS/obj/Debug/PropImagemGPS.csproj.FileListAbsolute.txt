@@ -1,0 +1,11 @@
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\bin\Debug\PropImagemGPS.exe.config
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\bin\Debug\PropImagemGPS.exe
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\bin\Debug\PropImagemGPS.pdb
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\obj\Debug\PropImagemGPS.csproj.AssemblyReference.cache
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\obj\Debug\PropImagemGPS.csproj.CoreCompileInputs.cache
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\obj\Debug\PropImagemGPS.exe
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\obj\Debug\PropImagemGPS.pdb
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\bin\Debug\DLLPropImagem.dll
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\bin\Debug\ExifLib.dll
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\bin\Debug\DLLPropImagem.pdb
+D:\projetos\csharp\PropImagemGPS\PropImagemGPS\obj\Debug\PropImagemGPS.csproj.CopyComplete
