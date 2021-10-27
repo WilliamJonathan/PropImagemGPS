@@ -12,7 +12,7 @@ namespace PropImagemGPS
             DateTime datetime;
             double[] lt, lg;
             double degrees, minutes, seconds, lat_dd, long_dd;
-            string data, lat, lon;
+            string data, lat, lon, lat_ref, lon_ref;
 
             if (args.Length != 0)
             {
@@ -21,6 +21,8 @@ namespace PropImagemGPS
                 data = "";
                 lat = "";
                 lon = "";
+                lat_ref = "";
+                lon_ref = "";
 
                 /*var dll = new DLLPropImagem.DLLPropImagem();
                 string data = dll.RetornaData(path).ToString();
@@ -33,25 +35,46 @@ namespace PropImagemGPS
                 }
                 if (reader.GetTagValue<double[]>(ExifTags.GPSLatitude, out lt))//latitude
                 {
+                    reader.GetTagValue<string>(ExifTags.GPSLatitudeRef, out lat_ref);
                     degrees = lt[0];
                     minutes = lt[1];
                     seconds = lt[2];
-                    lat_dd = degrees + (minutes / 60) + (seconds / 3600);
-                    lat = lat_dd.ToString();
+                    lat_ref = lat_ref.ToString();
+                    if (lat_ref == "S")
+                    {
+                        lat_dd = (degrees + (minutes / 60) + (seconds / 3600)) * -1;
+                        lat = lat_dd.ToString();
+                    }
+                    else
+                    {
+                        lat_dd = degrees + (minutes / 60) + (seconds / 3600);
+                        lat = lat_dd.ToString();
+                    }
                 }
                 if (reader.GetTagValue<double[]>(ExifTags.GPSLongitude, out lg))//longitude
                 {
+                    reader.GetTagValue<string>(ExifTags.GPSLongitudeRef, out lon_ref);
                     degrees = lg[0];
                     minutes = lg[1];
                     seconds = lg[2];
-                    long_dd = degrees + (minutes / 60) + (seconds / 3600);
-                    lon = long_dd.ToString();
+                    lon_ref = lon_ref.ToString();
+                    if (lon_ref == "W")
+                    {
+                        long_dd = (degrees + (minutes / 60) + (seconds / 3600)) * -1;
+                        lon = long_dd.ToString();
+                    }
+                    else
+                    {
+                        long_dd = degrees + (minutes / 60) + (seconds / 3600);
+                        lon = long_dd.ToString();
+                    }
+                    
                 }
                 try
                 {
                     string[] lines =
                         {
-                            "PATH="+path, "LATITUDE="+lat, "LONGITUDE="+lon, "TIRADA EM="+data
+                            "PATH="+path, "LATITUDE="+lat, "LONGITUDE="+lon, "TIRADA EM="+data, "LAT_REF=" +lat_ref, "LON_REF="+lon_ref
                         };
 
                     File.WriteAllLines(pathTxt, lines);
