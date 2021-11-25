@@ -100,8 +100,8 @@ namespace PropImagemGPS
                     {
                         string[] lines =
                             {
-                        "Não foi possivel ler a latitude e longitude da imagem\n" +
-                        "Formato da imagem invalido!"
+                        "PATH="+path, "LATITUDE="+lat, "LONGITUDE="+lon, "TIRADA EM="+data, "LAT_REF=" +lat_ref, "LON_REF="+lon_ref,
+                        "Err=Formato imagem invalida!"
                     };
 
                         File.WriteAllLines(pathTxt, lines);
