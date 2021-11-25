@@ -9,8 +9,8 @@ namespace PropImagemGPS
 
         static void Main(string[] args)
         {
-            args = new string[5];
-            args[0] = @"C:\Users\User\Documents\Downloads\img.jpg";
+            /*args = new string[5];
+            args[0] = @"C:\Users\User\Documents\Downloads\img.jpg";*/
             DateTime datetime;
             double[] lt, lg;
             double degrees, minutes, seconds, lat_dd, long_dd;
